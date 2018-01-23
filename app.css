@@ -14,13 +14,17 @@ body {
 }
 
 .header {
-    text-align: center;
     display: flex;
     align-items: center;
     padding: 5px 10px;
     background-color: #222;
+    text-align: center;
     border-radius: 15px 15px 0 0;
     border-bottom: solid 2px #444;
+}
+
+.header h1 {
+    flex-grow: 1;
 }
 
 .player {
