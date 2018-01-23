@@ -1,4 +1,4 @@
-var PLAYERS = [
+const PLAYERS = [
     {
       name: 'Peter Musonye',
       score: 31,
@@ -16,27 +16,79 @@ var PLAYERS = [
     },
   ];
 
+const Header = React.createClass({
+
+  propTypes: {
+    title: React.PropTypes.string.isRequired,
+  },
+
+  render: function () {
+    return (
+      <div className="header">
+        <h1>{ this.props.title }</h1>
+      </div>
+    );
+  },
+});
+
+const Player = React.createClass({
+
+  propTypes: {
+    name: React.PropTypes.string.isRequired,
+    score: React.PropTypes.number.isRequired,
+  },
+
+  render: function () {
+    return (
+      <div className="player">
+        <div className="player-name">
+          {this.props.name}
+        </div>
+        <div className="player-score">
+          <Counter score={this.props.score}/>
+        </div>
+      </div>
+    );
+  },
+});
+
+const Counter = React.createClass({
+
+  propTypes: {
+    score: React.PropTypes.number.isRequired,
+  },
+
+  render: function () {
+    return (
+      <div className="counter">
+        <button className="counter-action decrement"> - </button>
+          <div className="counter-score"> {this.props.score} </div>
+        <button className="counter-action increment"> + </button>
+      </div>
+    );
+  },
+});
 
 const Application = React.createClass({
-  render: function() {
+
+  propTypes: {
+    title: React.PropTypes.string,
+  },
+
+  getDefaultProps: function () {
+    return {
+      title: 'Peter\'s Board',
+    };
+  },
+
+  render: function () {
     return (
       <div className="scoreboard">
-        <div className="header">
-          <h1>Scoreboard</h1>
-        </div>
+        <Header title={this.props.title}/>
         <div className="players">
-          <div className="player">
-            <div className="player-name">
-              Peter Musonye
-            </div>
-            <div className="player-score">
-              <div className="counter">
-                <button className="counter-action decrement"> - </button>
-                <div className="counter-score"> 23 </div>
-                <button className="counter-action increment"> + </button>
-              </div>
-            </div>
-          </div>
+          <Player name={"Peter Musonye"} score={23}/>
+          <Player name={"Akash Baga"} score={25}/>
+          <Player name={"Edmond Atto"} score={27}/>
         </div>
       </div>
     );
