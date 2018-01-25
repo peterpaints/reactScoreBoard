@@ -79,3 +79,79 @@ body {
     padding: 10px;
     font-size: 1.5em;
 }
+
+.header .stats {
+    width: 170px;
+}
+
+.stats {
+    margin-top: 0;
+    font-weight: normal;
+}
+
+.stats td:first-child {
+    text-align: right;
+    font-weight: normal;
+    color: #666;
+    font-size: 1em;
+}
+
+.stats td:last-child {
+    text-align: left;
+}
+
+.add-player-form {
+    display: flex;
+    background-color: #222;
+    border-radius: 0 0 20px 20px;
+}
+
+.add-player-form input[type=text] {
+    flex-grow: 1;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #333;
+    border-style: none;
+    color: #999;
+    width: 560px;
+    font-weight: normal;
+    font-size: 1em;
+}
+
+.add-player-form input[type=text]:focus {
+    background-color: #444;
+    text-decoration: none;
+    outline: none;
+}
+
+.add-player-form input[type=submit] {
+    display: inline-block;
+    font-size: .7em;
+    margin: 15px 15px 15px 0;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    color: #999;
+    font-weight: bold;
+    border: none;
+}
+
+.add-player-form input[type=submit]:focus{
+    background-color: #444;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.remove-player {
+    visibility: hidden;
+    margin-right: 10px;
+    color: #ef5350;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.player-name:hover .remove-player {
+    visibility: visible;
+}
